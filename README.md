@@ -104,7 +104,7 @@ For example, with `LEN = 8` and `0123456789` as segment, `012..789` is displayed
 
 **Syntax**: `mnml_git`
 
-Displays the current git's branch, when inside a git repo. Color is set to `$MNML_OK_COLOR` if the branch is clean, `$MNML_ERR_COLOR` if the branch is dirty.
+Displays the current git's branch, when inside a git repo. Color is set to `$MNML_OK_COLOR` if the branch is clean, `$MNML_ERR_COLOR` if the branch is dirty (modified), or `$MNML_MEH_COLOR` if there are untracked files.
 
 ### Mercurial branch status
 

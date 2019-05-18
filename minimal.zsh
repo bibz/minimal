@@ -69,14 +69,21 @@ function mnml_cwd {
 }
 
 function mnml_git {
-    local statc="%{\e[0;3${MNML_OK_COLOR}m%}" # assume clean
     local bname="$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 
     if [ -n "$bname" ]; then
-        if [ -n "$(git status --porcelain 2> /dev/null)" ]; then
-            statc="%{\e[0;3${MNML_ERR_COLOR}m%}"
+        git_status="$(git status --porcelain 2> /dev/null)"
+        if echo "$git_status" | grep -Gq -e '^M' -e '^ M' ; then
+            # Dirty state: there are changes
+            statc="$MNML_ERR_COLOR"
+        elif echo "$git_status" | grep -Gq '^??' ; then
+            # Dirty state: there are untracked files
+            statc="$MNML_MEH_COLOR"
+        else
+            # Clean state
+            statc="$MNML_OK_COLOR"
         fi
-        printf '%b' "$statc$bname%{\e[0m%}"
+        printf '%b' "%{\e[0;3${statc}m%}$bname%{\e[0m%}"
     fi
 }
 
