@@ -32,6 +32,7 @@ A component should work in any of the three areas (left, right, info)
 Different components can use these (global) settings:
 
 - `MNML_OK_COLOR`: Color for successful things (default: `2`)
+- `MNML_MEH_COLOR`: Color for intermediate states (default: `3`)
 - `MNML_ERR_COLOR`: Color for failures (default: `1`)
 - `MNML_USER_CHAR`: Character used for unprivileged users (default: `λ`)
 - `MNML_INSERT_CHAR`: Character used for vi insert mode (default: `›`)
