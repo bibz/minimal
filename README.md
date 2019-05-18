@@ -140,7 +140,7 @@ Displays the hostname only if current session is through a SSH connection.
 
 **Syntax**: `mnml_pyenv`
 
-Displays the current activated python virtualenv.
+Displays the current activated python virtualenv. Color is set to `$MNML_ENV_COLOR`.
 
 ### Last command error value
 
