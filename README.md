@@ -33,6 +33,7 @@ Different components can use these (global) settings:
 
 - `MNML_OK_COLOR`: Color for successful things (default: `2`)
 - `MNML_ERR_COLOR`: Color for failures (default: `1`)
+- `MNML_ENV_COLOR`: Color for different environments (default: `4`)
 - `MNML_USER_CHAR`: Character used for unprivileged users (default: `λ`)
 - `MNML_INSERT_CHAR`: Character used for vi insert mode (default: `›`)
 - `MNML_NORMAL_CHAR`: Character used for vi normal mode (default: `·`)
